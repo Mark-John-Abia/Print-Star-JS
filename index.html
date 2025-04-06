@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyramid Example</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #pyramid {
+        font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Create an empty pre tag with a specific id -->
+  <pre id="pyramid"></pre>
+
+  <script>
+    function printPyramid(rows) {
+      // Get the element where you want to display the pyramid
+      const pyramidElement = document.getElementById("pyramid");
+
+      // Clear any previous content
+      pyramidElement.innerHTML = "";
+
+      // Loop through each row
+      for (let i = 1; i <= rows; i++) {
+        // Print leading spaces
+        let spaces = ' '.repeat(rows - i);
+
+        // Print stars
+        let stars = '*'.repeat(2 * i - 1);
+
+        // Combine spaces and stars
+        const rowContent = spaces + stars;
+
+        // Append the row content with a line break to the pre element
+        pyramidElement.innerHTML += rowContent + "\n";
+        console.log(spaces + stars);
+      }
+    }
+
+    // Call the function to print a pyramid with 5 rows
+    printPyramid(5);
+  </script>
+
+</body>
+</html>
